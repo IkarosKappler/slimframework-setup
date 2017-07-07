@@ -1,0 +1,11 @@
+SlimPHP
+=======
+2017-07-07
+
+
+Install Composer
+
+Install Slim
+------------
+composer require slim/slim "^3.0"
+composer install

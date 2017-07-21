@@ -9,3 +9,72 @@ Install Slim
 ------------
 composer require slim/slim "^3.0"
 composer install
+
+Configure your web server to point to the .../public dir as root.
+
+Add the .htaccess file:
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+OR this the nginx's location block:
+if (!-e $request_filename){
+    rewrite ^(.*)$ /index.php break;
+}
+
+
+
+Install twig view (template engine)
+-----------------------------------
+composer require slim/twig-view
+
+
+
+The Code
+--------
+
+// Create app
+$app = new \Slim\App( [ 'settings' => $config ] );
+
+// Get container
+$container = $app->getContainer();
+
+// Register component on container
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('path/to/templates', [
+            'cache' => 'path/to/cache'
+	        ]);
+
+    // Instantiate and add Slim specific extension
+        $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
+	    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+
+    return $view;
+};
+
+
+// Render Twig template in route
+$app->get('/hello/{name}', function ($request, $response, $args) {
+    return $this->view->render($response, 'profile.html', [
+            'name' => $args['name']
+	        ]);
+		})->setName('profile');
+
+// Run app
+$app->run();
+
+
+
+
+Create special directories for templates and cache (my choice)
+--------------------------------------------------------------
+mkdir resources
+mkdir resources/templates
+mkdir storage
+mkdir storage/cache
+
+
+Put ypur first template into ./resources/templates/
+
+Be sure that the storage directory is writeable for the app!

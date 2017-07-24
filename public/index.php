@@ -27,9 +27,8 @@ $container = $app->getContainer();
 
 // Register component on container
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig(
-        '../resources/templates', [
-        'cache' => '../storage/cache'
+    $view = new \Slim\Views\Twig( '../resources/templates', [
+        // 'cache' => '../storage/cache' 
     ]);
 
     // Instantiate and add Slim specific extension
@@ -45,6 +44,14 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
                 'name' => $args['name']
     ]);
 })->setName('profile');
+
+
+// Render Twig template in route
+/*
+$app->get('/', function ($request, $response, $args) {
+    return $this->view->render($response, 'welcome.blade.html', []);
+})->setName('welcome');
+*/
 
 
 

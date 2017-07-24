@@ -1,0 +1,10 @@
+/**
+ * @author  Ikaros Kappler
+ * @version 1.0.0
+ * @date    2017-07-24
+ **/
+
+header h1, h2, h3 {
+    text-align : right;
+    margin     : 0px;
+}

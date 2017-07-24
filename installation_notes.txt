@@ -9,6 +9,23 @@ Install Slim
 ------------
 composer require slim/slim "^3.0"
 composer install
+--OR--
+composer require slim/slim "^3.0"
+
+
+
+Init the app ('my-app-name')
+------------
+composer create-project slim/slim-skeleton [my-app-name]
+
+
+Make the logs writeable
+-----------------------
+cd [my-app-name]
+chmod a+rwx logs
+
+
+
 
 Configure your web server to point to the .../public dir as root.
 

@@ -14,27 +14,13 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-//require '../vendor/autoload.php';
-
 session_start();
-
-// Configuration
-/*$config['displayErrorDetails'] = true;
-$config['addContentLengthHeader'] = false;
-
-$config['db']['host']   = "localhost";
-$config['db']['user']   = "slim_i2b";
-$config['db']['pass']   = "int2byte";
-$config['db']['dbname'] = "slim_i2b";
-*/
 
 $settings = require __DIR__ . '/../src/settings.php';
 
 
 // Create app
 $app = new \Slim\App( [ 'settings' => $settings ] );
-// Clear cached documents after 1 second (for development)
-//$app->expires('+1 seconds');
 
 // Get container
 $container = $app->getContainer();

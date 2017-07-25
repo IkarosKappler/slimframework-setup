@@ -131,7 +131,8 @@ MEDIA QUERIES
 
 }
 
-
+/* Some code for development */
+/*
 #content {
 	background : #f8f8f8;
 }
@@ -146,5 +147,7 @@ header, #content, #middle, #sidebar {
 }
 
 #pagewrap, header, #content, #middle, #sidebar, footer {
-	/* border: solid 1px #ccc; */
+        border: solid 1px #ccc;
 }
+*/
+

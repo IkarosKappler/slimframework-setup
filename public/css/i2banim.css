@@ -1,0 +1,50 @@
+/**
+ * @author  Ikaros Kappler
+ * @date    2017-02-26
+ * @version 1.0.0
+ **/
+
+div#i2banim-container {
+
+}
+
+div#i2banim-pixel-container {
+    /* position         : absolute; */
+    position : relative;
+    margin-top      : -199px;
+    left     : 4px;
+    width    : 160px;
+}
+
+
+
+div.i2ba_pixel {
+    display          : inline-block;
+    width            : 16px;
+    height           : 16px;
+    margin           : 0px;
+    padding          : 0px;
+}
+
+.i2ba_pixel {
+    
+}
+
+.no-display {
+    display          : none;
+}
+
+img#icon_blank_final {
+    top              : -4px;
+    left             : -4px;
+}
+
+div.i2ba_row {
+    line-height      : 16px;
+    height           : 16px;
+}
+
+.i2ba_pixel_black {
+    background-color : black;
+}
+

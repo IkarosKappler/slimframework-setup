@@ -2,11 +2,17 @@
 <html>
   <head>
     {% block head %}
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+    
     <link rel="stylesheet" href="/css/responsive-three-columns.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/i2banim.css" />
     
     <script src="/lib/TweenMax.min.js"></script>
+    <script src="/lib/jquery-3.2.1.min.js"></script>
     <script src="/js/i2banim.js"></script>
 
     
@@ -19,21 +25,17 @@
 
       <header>
 	<h2>
-	  Heute code ich, morgen<br/>
-	debug ich, übermorgen<br/>
-	caste ich die K&ouml;nigin auf int</h2>
+	  Heute code ich, morgen debug<br/>
+	  ich, übermorgen caste ich<br/>
+	  die K&ouml;nigin auf int</h2>
 	
       </header>
       
       <section id="content">
-	{% block content %}{% endblock %}
 	<h2>{% block menu_headline %}1st Content Area{% endblock %}</h2>
-	<!-- <p>This page demonstrates a 3 column responsive layout, complete with responsive images and jquery slideshow.</p> -->
-	<!--<div id="i2banim-container">
-	  <img id="icon_blank_final" src="/img/icon_blank_cropped.png" width="136" height="200" style="visibility: hidden; position: absolute;" />
-	  <div id="i2banim-pixel-container"></div>
-	</div>
--->
+	{% block content %}
+	<p>This page demonstrates a 3 column responsive layout, complete with responsive images and jquery slideshow.</p>
+	{% endblock %}
       </section>
       
       <section id="middle">
@@ -52,12 +54,11 @@
       <footer>
 	<p>
 	    {% block footer %}
-	    <a href="http://int2byte.de">int2byte.de</a>.
+	    <a href="http://int2byte.de">int2byte.de</a>
 	    {% endblock %}
 	</p>
       </footer>
 
-    </div>
     </div>
   </body>
 </html>

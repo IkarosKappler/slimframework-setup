@@ -37,7 +37,9 @@
 	    for( var c = 0; c < matrix[r].length; c++ ) {
 		$px = $('<div/>', { id : 'i2ba_'+r+'_'+c } ).addClass('i2ba_pixel');
 		if( matrix[r][c] == 1 ) {
-		    $px.append( $pixel_template.clone().attr('id','i2ba_pixel_'+(r*c+c)).addClass('i2ba_pixel i2ba_pixel_black').removeClass('no-display').data('is-black',true) );
+		    console.log('black');
+		    var $inner =  $pixel_template.clone().attr('id','i2ba_pixel_'+(r*c+c)).addClass('i2ba_pixel').addClass('i2ba_pixel_black').removeClass('no-display').data('is-black',true);
+		    $px.append( $inner );
 		    //blackPixels.push( $px );
 		}
 		$row.append( $px );

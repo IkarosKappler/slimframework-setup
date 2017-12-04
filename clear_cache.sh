@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -rf storage/cache/*
+rm -rf cache/*

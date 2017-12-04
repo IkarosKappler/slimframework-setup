@@ -9,6 +9,11 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
 
-    // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
-});
+    // Render index view (default)
+    // return $this->renderer->render($response, 'index.phtml', $args);
+
+    // Render index (with twig)
+    return $this->renderer->render($response, 'index.phtml', [
+        'name' => array_key_exists('name',$args) ? $args['name'] : null
+    ]);
+})->setName('profile');
